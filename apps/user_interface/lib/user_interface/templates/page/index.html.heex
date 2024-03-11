@@ -1,0 +1,19 @@
+<h1>Log in</h1>
+
+<div class="row">
+  <div>
+  <%= @error_message %>
+    <%= form_for @conn, Routes.page_path(@conn, :login), [as: :user], fn f -> %>
+      <%= label f, :phone_number %>
+      <%= text_input f, :phone_number %>
+
+      <%= label f, :password %>
+      <%= password_input f, :password %>
+
+      <%= submit "Log in"%>
+    <% end %>
+  </div>
+  
+  <p>
+  </p>
+</div>

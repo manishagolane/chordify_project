@@ -1,0 +1,12 @@
+<h4>Hi <%= @current_uname%></h4>
+<div>cart: <%= @cart%></div>
+<p style="color: red"><%= @message%></p>
+<%= for product <- @products do %>
+    <li>
+      <div>Name: <%= product.name%></div>
+      <div>Price: <%= product.price%></div>
+      <div>Quantity Available: <%= product.quantity_available%></div>
+      <button phx-click="add-cart" phx-value-select_product="<%= product.id %>"> + </button>
+      <button phx-click="del-cart" phx-value-select_product="<%= product.id %>"> - </button>
+    </li>
+<%end%>
